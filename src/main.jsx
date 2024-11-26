@@ -10,6 +10,8 @@ import {
 import Home from './components/Home/Home.jsx';
 import ErrorPage from './components/Errorpage/ErrorPage.jsx';
 import AddProperties from './components/AddProperties/AddProperties.jsx';
+import MyProfile from './components/My-profile/MyProfile.jsx';
+import Wishlist from './components/Wishlist/Wishlist.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
    path: "/AddProperties",
    element: <AddProperties></AddProperties>,
+  },
+  {
+   path: "/myProfile",
+   element: <MyProfile></MyProfile>,
+  },
+  {
+   path: "/wishlist",
+   element: <Wishlist></Wishlist>,
   },
 ]);
 createRoot(document.getElementById('root')).render(
