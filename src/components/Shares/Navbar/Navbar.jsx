@@ -1,6 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const navItems = <>
+  <li><Link to="/" className="text-blue-400 font-bold">Home</Link></li>
+  <li><Link to="/AllProperties" className="text-blue-400 font-bold">All properties</Link></li>
+  <li><Link to="/allBooks" className="text-blue-400 font-bold">Dashboard</Link></li>
+  <li><Link to="/allBooks" className="text-blue-400 font-bold">Agent Deshbord</Link></li>
+
+   <li><Link to="/AddProperties" className="text-blue-400 font-bold">Add Properties</Link></li>
+   <li><Link to="/login" className="text-blue-400 font-bold">Sign UP</Link></li>
+  </>
+
+
+
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -33,28 +46,45 @@ const Navbar = () => {
               <li><a>Item 3</a></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">Property Plus</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
+           {navItems}
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn">Log In</a>
         </div>
+
+        <div className="dropdown dropdown-end ml-5">
+<div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+<div className="w-10 rounded-full">
+    <img
+      alt="Tailwind CSS Navbar component"
+      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+  </div>
+</div>
+<ul
+  tabIndex={0}
+  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+  <li>
+    <a className="justify-between">
+    My Profile
+    </a>
+  </li>
+  <li><a>Wishlist</a></li>
+  <li><a>Property bought</a></li>
+  <Link to="/AddProperties"><a>Add Properties</a></Link>
+  <li><a>My reviews</a></li>
+  <li><a>Logout</a></li>
+</ul>
+</div>
+       
+ 
       </div>
     );
 };
 
 export default Navbar;
+
